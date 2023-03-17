@@ -6,6 +6,17 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="link-container"><a href="/new">Create a new message</a></div>
+    <div class="main-container">
+      <% if(messages.length != 0 ) { %>
+        <% messages.forEach(m => { %>
+          <div class="message-container">
+            <p> <%= m.text %></p>
+            <p> <%= m.user %></p>
+            <p> <%= m.added %></p>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
   </body>
 </html>
